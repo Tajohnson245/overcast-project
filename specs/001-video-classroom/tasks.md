@@ -144,10 +144,10 @@
 
 ### Implementation for User Story 4
 
-- [ ] T045 [US4] Add auth verification on page load in src/app/layout.tsx
-- [ ] T046 [US4] Update useAuth hook to check cookie on mount and restore mode
-- [ ] T047 [US4] Ensure mode persists during navigation between lobby and sessions
-- [ ] T048 [US4] Verify logout clears cookie and resets to student mode
+- [x] T045 [US4] Add auth verification on page load in src/app/layout.tsx
+- [x] T046 [US4] Update useAuth hook to check cookie on mount and restore mode
+- [x] T047 [US4] Ensure mode persists during navigation between lobby and sessions
+- [x] T048 [US4] Verify logout clears cookie and resets to student mode
 
 **Checkpoint**: Instructor mode persists across all navigation, refresh restores mode, logout works
 

@@ -44,6 +44,7 @@ export function useAuth(): UseAuthReturn {
   
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [hasVerified, setHasVerified] = useState(false);
   
   /**
    * Login with username and password.
@@ -97,11 +98,19 @@ export function useAuth(): UseAuthReturn {
   
   /**
    * Verify current session status.
+   * Checks the HTTP-only cookie to restore instructor mode on page load/refresh.
    */
   const verify = useCallback(async (): Promise<boolean> => {
+    // Prevent duplicate verification calls
+    if (hasVerified) {
+      return user.isAuthenticated;
+    }
+    
     try {
       const response = await fetch('/api/auth/verify');
       const data: AuthVerifyResponse = await response.json();
+      
+      setHasVerified(true);
       
       if (data.isAuthenticated) {
         setAuthenticated(true);
@@ -115,9 +124,10 @@ export function useAuth(): UseAuthReturn {
       }
     } catch (err) {
       console.error('Verify error:', err);
+      setHasVerified(true);
       return false;
     }
-  }, [setAuthenticated, resetUser, user.isAuthenticated]);
+  }, [setAuthenticated, resetUser, user.isAuthenticated, hasVerified]);
   
   /**
    * Clear error state.
