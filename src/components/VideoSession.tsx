@@ -41,30 +41,46 @@ function VideoSessionInner({
   const daily = useDaily();
   const [connectionState, setConnectionState] = useState<ConnectionState>('idle');
   const [error, setError] = useState<string | null>(null);
+  const [isViewOnly, setIsViewOnly] = useState(false);
   
   // Handle joining the room
-  const joinRoom = useCallback(async () => {
+  const joinRoom = useCallback(async (viewOnly = false) => {
     if (!daily || connectionState !== 'idle') return;
     
     setConnectionState('joining');
     setError(null);
+    setIsViewOnly(viewOnly);
     
     try {
       // Get meeting token from our API
       const displayName = userName || generateGuestName();
       const { token, roomUrl } = await getDailyToken(cohortId, displayName, isInstructor);
       
-      // Join the Daily.co room
+      // Join the Daily.co room with appropriate settings
       await daily.join({
         url: roomUrl,
         token,
         userName: displayName,
+        // If view-only, disable camera and mic from the start
+        startVideoOff: viewOnly,
+        startAudioOff: viewOnly,
       });
       
       setConnectionState('joined');
     } catch (err) {
       console.error('Failed to join room:', err);
-      setError(err instanceof Error ? err.message : 'Failed to join room');
+      const errorMessage = err instanceof Error ? err.message : 'Failed to join room';
+      
+      // Check if it's a permission error
+      if (errorMessage.toLowerCase().includes('permission') || 
+          errorMessage.toLowerCase().includes('notallowed')) {
+        setError('Camera/microphone access denied. You can join in view-only mode.');
+      } else if (errorMessage.toLowerCase().includes('not found') ||
+                 errorMessage.toLowerCase().includes('room')) {
+        setError('This session is not currently live. Please try again later.');
+      } else {
+        setError(errorMessage);
+      }
       setConnectionState('error');
     }
   }, [daily, cohortId, userName, isInstructor, connectionState]);
@@ -122,24 +138,43 @@ function VideoSessionInner({
   }
   
   if (connectionState === 'error') {
+    const isPermissionError = error?.toLowerCase().includes('permission') || 
+                               error?.toLowerCase().includes('denied') ||
+                               error?.toLowerCase().includes('view-only');
+    
     return (
       <div className="flex flex-col items-center justify-center py-20">
-        <div className="text-4xl mb-4">⚠️</div>
+        <div className="text-4xl mb-4">{isPermissionError ? '📷' : '⚠️'}</div>
         <h3 className="text-xl font-semibold text-red-400 mb-2">
-          Connection Error
+          {isPermissionError ? 'Camera/Mic Access Required' : 'Connection Error'}
         </h3>
-        <p className="text-overcast-gray mb-4">
+        <p className="text-overcast-gray mb-4 text-center max-w-md">
           {error || 'Failed to connect to the session.'}
         </p>
-        <button
-          onClick={() => {
-            setConnectionState('idle');
-            setError(null);
-          }}
-          className="rounded-lg bg-overcast-teal px-4 py-2 font-medium text-overcast-black transition-colors hover:bg-overcast-teal-dim"
-        >
-          Try Again
-        </button>
+        <div className="flex gap-3">
+          <button
+            onClick={() => {
+              setConnectionState('idle');
+              setError(null);
+            }}
+            className="rounded-lg bg-overcast-teal px-4 py-2 font-medium text-overcast-black transition-colors hover:bg-overcast-teal-dim"
+          >
+            Try Again
+          </button>
+          {isPermissionError && (
+            <button
+              onClick={() => {
+                setConnectionState('idle');
+                setError(null);
+                // Join in view-only mode
+                setTimeout(() => joinRoom(true), 100);
+              }}
+              className="rounded-lg border border-overcast-gray-dark px-4 py-2 font-medium text-overcast-white transition-colors hover:border-overcast-teal"
+            >
+              Join View-Only
+            </button>
+          )}
+        </div>
       </div>
     );
   }
@@ -160,12 +195,17 @@ function VideoSessionInner({
     <div className="space-y-6">
       {/* Connection status bar */}
       <div className="flex items-center justify-between rounded-lg bg-overcast-dark/50 px-4 py-2">
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
           <span className="text-sm text-overcast-gray">Connected to {cohortName}</span>
           {isInstructor && (
             <span className="rounded bg-overcast-orange/20 px-2 py-0.5 text-xs text-overcast-orange">
               Instructor Mode
+            </span>
+          )}
+          {isViewOnly && (
+            <span className="rounded bg-overcast-gray-dark px-2 py-0.5 text-xs text-overcast-gray">
+              View Only
             </span>
           )}
         </div>
