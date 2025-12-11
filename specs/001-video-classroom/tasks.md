@@ -119,16 +119,16 @@
 
 ### Components for User Story 3
 
-- [ ] T038 [US3] Create ControlPanel component with mute participant button in src/components/ControlPanel.tsx
-- [ ] T039 [US3] Update session page to conditionally show ControlPanel when in instructor mode
-- [ ] T040 [US3] Implement mute participant functionality using daily.updateParticipant()
-- [ ] T041 [US3] Add participant list in ControlPanel showing name and mute status
-- [ ] T042 [P] [US3] Add breakout room UI placeholder in ControlPanel (basic group size input, future implementation)
+- [x] T038 [US3] Create ControlPanel component with mute participant button in src/components/ControlPanel.tsx
+- [x] T039 [US3] Update session page to conditionally show ControlPanel when in instructor mode
+- [x] T040 [US3] Implement mute participant functionality using daily.updateParticipant()
+- [x] T041 [US3] Add participant list in ControlPanel showing name and mute status
+- [x] T042 [P] [US3] Add breakout room UI placeholder in ControlPanel (basic group size input, future implementation)
 
 ### Integration for User Story 3
 
-- [ ] T043 [US3] Pass instructor mode state to VideoSession component
-- [ ] T044 [US3] Ensure instructor joins with owner permissions via Daily token
+- [x] T043 [US3] Pass instructor mode state to VideoSession component
+- [x] T044 [US3] Ensure instructor joins with owner permissions via Daily token
 
 **Checkpoint**: Instructor sees Control Panel, can mute participants, breakout room UI visible (non-functional)
 

@@ -14,6 +14,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { DailyProvider, useDaily, useDailyEvent } from '@daily-co/daily-react';
 import DailyIframe from '@daily-co/daily-js';
 import ParticipantGrid from './ParticipantGrid';
+import ControlPanel from './ControlPanel';
 import { getDailyToken, generateGuestName } from '@/lib/daily';
 import type { ConnectionState } from '@/types';
 
@@ -162,6 +163,11 @@ function VideoSessionInner({
         <div className="flex items-center gap-2">
           <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
           <span className="text-sm text-overcast-gray">Connected to {cohortName}</span>
+          {isInstructor && (
+            <span className="rounded bg-overcast-orange/20 px-2 py-0.5 text-xs text-overcast-orange">
+              Instructor Mode
+            </span>
+          )}
         </div>
         <button
           onClick={leaveRoom}
@@ -173,6 +179,9 @@ function VideoSessionInner({
       
       {/* Participant video grid */}
       <ParticipantGrid />
+      
+      {/* Instructor Control Panel */}
+      {isInstructor && <ControlPanel />}
     </div>
   );
 }

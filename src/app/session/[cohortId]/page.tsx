@@ -8,22 +8,27 @@
  * - Cohort name and description
  * - Video session with all participants
  * - Return to lobby button
+ * - Instructor controls (if in instructor mode)
  */
 
 import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import VideoSession from '@/components/VideoSession';
+import { useAuth } from '@/hooks/useAuth';
 import type { Cohort } from '@/types';
 
 export default function SessionPage() {
   const params = useParams();
-  const router = useRouter();
   const cohortId = params.cohortId as string;
+  const { mode, isAuthenticated } = useAuth();
   
   const [cohort, setCohort] = useState<Omit<Cohort, 'dailyRoomUrl'> | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Determine if user is in instructor mode
+  const isInstructor = mode === 'instructor' && isAuthenticated;
   
   // Fetch cohort details
   useEffect(() => {
@@ -93,9 +98,16 @@ export default function SessionPage() {
       {/* Session Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold text-overcast-teal md:text-3xl">
-            {cohort.name}
-          </h1>
+          <div className="flex items-center gap-3">
+            <h1 className="text-2xl font-bold text-overcast-teal md:text-3xl">
+              {cohort.name}
+            </h1>
+            {isInstructor && (
+              <span className="rounded-lg bg-overcast-orange/20 px-3 py-1 text-sm font-medium text-overcast-orange">
+                Instructor Mode
+              </span>
+            )}
+          </div>
           <p className="mt-1 text-overcast-gray">
             {cohort.description}
           </p>
@@ -127,16 +139,19 @@ export default function SessionPage() {
         <VideoSession
           cohortId={cohort.id}
           cohortName={cohort.name}
+          isInstructor={isInstructor}
         />
       </div>
       
       {/* Session Footer */}
       <div className="mt-6 text-center text-sm text-overcast-gray">
         <p>
-          Having trouble? Try refreshing the page or checking your camera/microphone permissions.
+          {isInstructor 
+            ? 'Use the control panel above to manage participants.'
+            : 'Having trouble? Try refreshing the page or checking your camera/microphone permissions.'
+          }
         </p>
       </div>
     </div>
   );
 }
-
