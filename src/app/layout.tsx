@@ -4,6 +4,7 @@
  * This layout wraps all pages and provides:
  * - Custom futuristic fonts (Space Grotesk for display, JetBrains Mono for code)
  * - Dark theme background
+ * - Jotai Provider for global state
  * - Header and Footer components
  * - Global metadata
  */
@@ -11,6 +12,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Providers from "@/components/Providers";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
 
 /**
  * Root layout component that wraps all pages.
- * Provides font variables, base styling, and persistent Header/Footer.
+ * Provides font variables, base styling, global state, and persistent Header/Footer.
  */
 export default function RootLayout({
   children,
@@ -65,16 +67,18 @@ export default function RootLayout({
           flex-col
         `}
       >
-        {/* Header with navigation - mode toggle will be connected in Phase 4 */}
-        <Header />
-        
-        {/* Main content area */}
-        <main className="flex-1">
-          {children}
-        </main>
-        
-        {/* Footer with Overclock branding */}
-        <Footer />
+        <Providers>
+          {/* Header with navigation and instructor mode toggle */}
+          <Header />
+          
+          {/* Main content area */}
+          <main className="flex-1">
+            {children}
+          </main>
+          
+          {/* Footer with Overclock branding */}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
