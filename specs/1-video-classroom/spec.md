@@ -2,7 +2,7 @@
 
 **Feature Branch**: `1-video-classroom`  
 **Created**: 2025-12-10  
-**Status**: Draft  
+**Status**: Clarified  
 **Input**: Video-based classroom application with lobby, live video feeds, and instructor mode
 
 ## User Scenarios & Testing *(mandatory)*
@@ -133,9 +133,19 @@ to lobby, and verifying mode is still selected.
 - **FR-007**: Instructors MUST see a Control Panel when viewing a session that is
   not visible to students
 - **FR-008**: The Control Panel MUST include ability to mute participants
-- **FR-009**: The Control Panel MUST include ability to start breakout rooms
+- **FR-009**: The Control Panel MUST include ability to start breakout rooms with
+  a specified group size (system randomly assigns participants)
+- **FR-017**: When starting breakout rooms, instructor MUST specify the group size
+- **FR-018**: System MUST randomly distribute participants into breakout rooms
+- **FR-019**: Participants in breakout rooms MUST have option to return to main session
 - **FR-010**: The current mode (Student/Instructor) MUST persist during navigation
 - **FR-011**: All screens MUST display "Powered by the Overclock Accelerator" footer
+- **FR-012**: System MUST require username/password authentication before granting
+  access to Instructor mode
+- **FR-013**: Unauthenticated users clicking "Instructors" MUST see a login prompt
+- **FR-014**: Students MUST be able to broadcast their own video and audio when in a session
+- **FR-015**: System MUST prompt students for camera/microphone permissions when joining
+- **FR-016**: Students MUST be able to participate without camera/mic (view-only fallback)
 
 ### Key Entities
 
@@ -144,12 +154,24 @@ to lobby, and verifying mode is still selected.
   active session
 - **Session**: A live video session for a cohort. Has a video feed, description,
   and list of participants
-- **Participant**: A user currently in a session. Can be muted by instructors
-- **Breakout Room**: A sub-session created by an instructor for small group work
+- **Participant**: A user currently in a session. Has video/audio streams that can 
+  be muted by instructors. May be in view-only mode if permissions denied
+- **Breakout Room**: A sub-session created by an instructor for small group work.
+  Participants are randomly assigned based on instructor-specified group size.
+  Participants can return to main session at any time
+
+## Clarifications
+
+### Session 2025-12-10
+
+- Q: How is instructor mode protected from unauthorized use? → A: Username/password authentication required for instructor access
+- Q: Do students broadcast their own video/audio, or only watch? → A: Full participation - students have video/audio, can be muted by instructor
+- Q: How are students assigned to breakout rooms? → A: Automatic random assignment into groups of specified size
 
 ## Assumptions
 
-- Users do not need to authenticate to join sessions (public access assumed)
+- Students do not need to authenticate to join sessions (public access for viewing)
+- Instructors MUST authenticate with username/password to access Instructor mode
 - Video streaming will use industry-standard real-time video protocols
 - Cohort images are static and pre-configured by administrators
 - Session descriptions are set by instructors or administrators before the session
