@@ -1,0 +1,171 @@
+# Feature Specification: Overcast Video Classroom
+
+**Feature Branch**: `1-video-classroom`  
+**Created**: 2025-12-10  
+**Status**: Draft  
+**Input**: Video-based classroom application with lobby, live video feeds, and instructor mode
+
+## User Scenarios & Testing *(mandatory)*
+
+### User Story 1 - Student Joins a Cohort Session (Priority: P1)
+
+A student visits the Overcast application and sees the main lobby displaying 6 available
+cohorts. Each cohort is represented by a tile with a static image and cohort name (e.g.,
+"Cohort 1", "Cohort 2"). The student clicks on a cohort tile to join that session and is
+taken to a live video feed of the classroom. At any time, the student can click "Return
+to Main Lobby" to leave the session and choose a different cohort.
+
+**Why this priority**: This is the core user journey. Without the ability for students
+to join and view video sessions, the application has no value.
+
+**Independent Test**: Can be fully tested by launching the app, clicking a cohort, 
+verifying video displays, and returning to lobby. Delivers the primary value of 
+attending a live class.
+
+**Acceptance Scenarios**:
+
+1. **Given** a student on the main lobby, **When** they view the page, **Then** they 
+   see 6 cohort tiles with images and labels (Cohort 1 through Cohort 6)
+2. **Given** a student on the main lobby, **When** they click a cohort tile, **Then** 
+   they are taken to that cohort's live video session
+3. **Given** a student viewing a video session, **When** they click "Return to Main 
+   Lobby", **Then** they return to the lobby and can select a different cohort
+4. **Given** a student viewing a video session, **When** the video is active, **Then** 
+   they see the cohort name, video feed, and session description
+
+---
+
+### User Story 2 - Instructor Enters Instructor Mode (Priority: P2)
+
+An instructor visits the Overcast application and toggles to "Instructor" mode using
+the header button. Once in Instructor mode, the instructor sees the same 6 cohort
+tiles but will receive enhanced controls when joining a session.
+
+**Why this priority**: Instructors need a separate mode to access moderation tools.
+This is essential for classroom management but depends on the base student flow.
+
+**Independent Test**: Can be tested by toggling to Instructor mode, verifying the UI
+reflects instructor selection, and confirming the mode persists when navigating.
+
+**Acceptance Scenarios**:
+
+1. **Given** a user on the main lobby, **When** they click "Instructors" in the header,
+   **Then** the button becomes selected and the user is in Instructor mode
+2. **Given** an instructor on the main lobby, **When** they view the page, **Then** 
+   they see the same 6 cohort tiles as students
+3. **Given** an instructor in Instructor mode, **When** they click "Students" in the
+   header, **Then** they switch back to Student mode
+
+---
+
+### User Story 3 - Instructor Moderates a Session (Priority: P2)
+
+An instructor in Instructor mode joins a cohort session and sees a Control Panel
+below the video feed. The Control Panel provides moderation tools including the
+ability to mute participants and start breakout rooms.
+
+**Why this priority**: Moderation tools are critical for instructors to manage
+live sessions effectively. This builds on the instructor mode foundation.
+
+**Independent Test**: Can be tested by joining a session as instructor and verifying
+Control Panel is visible with mute and breakout room options.
+
+**Acceptance Scenarios**:
+
+1. **Given** an instructor clicks a cohort tile, **When** they enter the session, 
+   **Then** they see a Control Panel below the video feed
+2. **Given** an instructor viewing the Control Panel, **When** they look at available
+   controls, **Then** they see options to mute participants
+3. **Given** an instructor viewing the Control Panel, **When** they look at available
+   controls, **Then** they see options to start breakout rooms
+4. **Given** an instructor in a session, **When** they click "Return to Main Lobby",
+   **Then** they return to the lobby in Instructor mode
+
+---
+
+### User Story 4 - Student/Instructor Mode Toggle Persists (Priority: P3)
+
+When a user switches between Student and Instructor mode, their selection persists
+as they navigate between the lobby and sessions. The header always shows the current
+mode selection.
+
+**Why this priority**: Mode persistence improves user experience but is not blocking
+for core functionality.
+
+**Independent Test**: Can be tested by toggling mode, joining a session, returning
+to lobby, and verifying mode is still selected.
+
+**Acceptance Scenarios**:
+
+1. **Given** a student in a session, **When** they return to lobby, **Then** the 
+   "Students" button remains selected
+2. **Given** an instructor in a session, **When** they return to lobby, **Then** the
+   "Instructors" button remains selected
+
+---
+
+### Edge Cases
+
+- What happens when a user tries to join a cohort that has no active session?
+  (Show appropriate message that session is not currently live)
+- What happens when video connection is lost during a session?
+  (Display reconnection message and attempt to reconnect automatically)
+- What happens when all 6 cohorts are at capacity?
+  (Display capacity message on affected cohort tiles)
+- What happens when a user has no camera/microphone permissions?
+  (Allow viewing without participating; show permission prompt if needed)
+
+## Requirements *(mandatory)*
+
+### Functional Requirements
+
+- **FR-001**: System MUST display a main lobby with exactly 6 cohort tiles arranged
+  in a 2-column, 3-row grid layout
+- **FR-002**: Each cohort tile MUST display a static image and cohort label 
+  (Cohort 1 through Cohort 6)
+- **FR-003**: System MUST provide a header with "Overcast" branding and 
+  Students/Instructors toggle buttons
+- **FR-004**: Users MUST be able to click a cohort tile to join that session's
+  live video feed
+- **FR-005**: The video session view MUST display the cohort name, live video feed,
+  session description, and "Return to Main Lobby" button
+- **FR-006**: Users MUST be able to return to the main lobby from any video session
+- **FR-007**: Instructors MUST see a Control Panel when viewing a session that is
+  not visible to students
+- **FR-008**: The Control Panel MUST include ability to mute participants
+- **FR-009**: The Control Panel MUST include ability to start breakout rooms
+- **FR-010**: The current mode (Student/Instructor) MUST persist during navigation
+- **FR-011**: All screens MUST display "Powered by the Overclock Accelerator" footer
+
+### Key Entities
+
+- **User**: A person using the application. Has a current mode (Student or Instructor)
+- **Cohort**: A classroom grouping (1-6). Has a name, static image, and optional 
+  active session
+- **Session**: A live video session for a cohort. Has a video feed, description,
+  and list of participants
+- **Participant**: A user currently in a session. Can be muted by instructors
+- **Breakout Room**: A sub-session created by an instructor for small group work
+
+## Assumptions
+
+- Users do not need to authenticate to join sessions (public access assumed)
+- Video streaming will use industry-standard real-time video protocols
+- Cohort images are static and pre-configured by administrators
+- Session descriptions are set by instructors or administrators before the session
+- Breakout room functionality creates separate video rooms within a session
+- Muting applies to audio only (video remains active)
+
+## Success Criteria *(mandatory)*
+
+### Measurable Outcomes
+
+- **SC-001**: Users can navigate from lobby to a cohort session in under 3 seconds
+- **SC-002**: Video feed displays within 5 seconds of joining a session
+- **SC-003**: System supports at least 50 concurrent participants per cohort session
+- **SC-004**: 95% of users successfully complete the join-session flow on first attempt
+- **SC-005**: Instructors can mute a participant within 2 clicks from the Control Panel
+- **SC-006**: Return to lobby action completes in under 2 seconds
+- **SC-007**: Mode toggle (Student/Instructor) reflects immediately in the UI
+- **SC-008**: System maintains video quality during normal network conditions
+
