@@ -88,22 +88,22 @@
 
 ### API for User Story 2
 
-- [ ] T028 [P] [US2] Create JWT utilities in src/lib/auth.ts (sign, verify, cookie helpers)
-- [ ] T029 [US2] Implement POST /api/auth/login endpoint in src/app/api/auth/login/route.ts
-- [ ] T030 [P] [US2] Implement POST /api/auth/logout endpoint in src/app/api/auth/logout/route.ts
-- [ ] T031 [P] [US2] Implement GET /api/auth/verify endpoint in src/app/api/auth/verify/route.ts
+- [x] T028 [P] [US2] Create JWT utilities in src/lib/auth.ts (sign, verify, cookie helpers)
+- [x] T029 [US2] Implement POST /api/auth/login endpoint in src/app/api/auth/login/route.ts
+- [x] T030 [P] [US2] Implement POST /api/auth/logout endpoint in src/app/api/auth/logout/route.ts
+- [x] T031 [P] [US2] Implement GET /api/auth/verify endpoint in src/app/api/auth/verify/route.ts
 
 ### Components for User Story 2
 
-- [ ] T032 [US2] Create useAuth hook with login, logout, verify functions in src/hooks/useAuth.ts
-- [ ] T033 [US2] Create LoginModal component with username/password form in src/components/LoginModal.tsx
-- [ ] T034 [US2] Update Header component to show Students/Instructors toggle and trigger LoginModal
+- [x] T032 [US2] Create useAuth hook with login, logout, verify functions in src/hooks/useAuth.ts
+- [x] T033 [US2] Create LoginModal component with username/password form in src/components/LoginModal.tsx
+- [x] T034 [US2] Update Header component to show Students/Instructors toggle and trigger LoginModal
 
 ### State Management for User Story 2
 
-- [ ] T035 [US2] Create user state atom with Jotai for mode tracking (student/instructor)
-- [ ] T036 [US2] Connect mode state to Header visual indicator
-- [ ] T037 [US2] Add error handling for invalid credentials in LoginModal
+- [x] T035 [US2] Create user state atom with Jotai for mode tracking (student/instructor)
+- [x] T036 [US2] Connect mode state to Header visual indicator
+- [x] T037 [US2] Add error handling for invalid credentials in LoginModal
 
 **Checkpoint**: Instructor login/logout works, mode toggle visible in header, mode persists in state
 
