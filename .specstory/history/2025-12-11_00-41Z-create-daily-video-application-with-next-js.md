@@ -5594,25 +5594,1631 @@ Lines added: 12, lines removed: 1
 ---
 
 <think><details><summary>Thought Process</summary>
-Now let me verify the buil</details></think>
+Now let me verify the build and update the tasks file.</details></think>
 
 ---
 
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && npm run build 2>&1 | tail -30</summary>
 
+```bash
+cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && npm run build 2>&1 | tail -30
+```
+
+```
+
+&gt; nextjs@0.1.0 build
+&gt; next build
+
+   ▲ Next.js 16.0.8 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.3s
+   Running TypeScript ...
+   Collecting page data using 15 workers ...
+   Generating static pages using 15 workers (0/4) ...
+   Generating static pages using 15 workers (1/4) 
+   Generating static pages using 15 workers (2/4) 
+   Generating static pages using 15 workers (3/4) 
+ ✓ Generating static pages using 15 workers (4/4) in 546.5ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+└ ○ /_not-found
+
+
+○  (Static)  prerendered as static content
+
+
+```
+</details>
+</tool-use>
 
 ---
 
-
+<think><details><summary>Thought Process</summary>
+Build successful. Now let me update the tasks file to mark Phase 2 tasks as complete and ask the user to commit.</details></think>
 
 ---
 
+Build successful. Updating tasks and preparing for commit:
 
+---
+
+<tool-use data-tool-type="write" data-tool-name="search_replace">
+
+<details><summary>Tool use: **search_replace** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/specs/001-video-classroom/tasks.md</summary>
+
+**Chunk 1**
+Lines added: 6, lines removed: 6
+
+```diff
+@@ -37,10 +37,10 @@
+  **⚠️ CRITICAL**: No user story work can begin until this phase is complete
+  
+- - [ ] T008 Create TypeScript interfaces in src/types/index.ts (Cohort, User, Session, Participant, LoginRequest, LoginResponse)
+- - [ ] T009 [P] Create cohort configuration in src/config/cohorts.ts with 6 static cohorts using env vars
+- - [ ] T010 [P] Create global styles in src/app/globals.css with dark theme base
+- - [ ] T011 [P] Implement root layout in src/app/layout.tsx with font loading and dark background
+- - [ ] T012 Create Header component with "Overcast" branding and placeholder mode toggle in src/components/Header.tsx
+- - [ ] T013 [P] Create Footer component with "Powered by the Overclock Accelerator" in src/components/Footer.tsx
++ - [x] T008 Create TypeScript interfaces in src/types/index.ts (Cohort, User, Session, Participant, LoginRequest, LoginResponse)
++ - [x] T009 [P] Create cohort configuration in src/config/cohorts.ts with 6 static cohorts using env vars
++ - [x] T010 [P] Create global styles in src/app/globals.css with dark theme base
++ - [x] T011 [P] Implement root layout in src/app/layout.tsx with font loading and dark background
++ - [x] T012 Create Header component with "Overcast" branding and placeholder mode toggle in src/components/Header.tsx
++ - [x] T013 [P] Create Footer component with "Powered by the Overclock Accelerator" in src/components/Footer.tsx
+  
+  **Checkpoint**: App shows header/footer shell, types are importable, cohort config returns 6 cohorts
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Phase 1: Setup - Initialize Next.js project (T001-T007)
+- [x] Phase 2: Foundational - Types and config (T008-T013)
+- [ ] Phase 3: User Story 1 - Student video flow (T014-T027)
+- [ ] Phase 4: User Story 2 - Instructor auth (T028-T037)
+- [ ] Phase 5: User Story 3 - Moderation (T038-T044)
+- [ ] Phase 6: User Story 4 - Persistence (T045-T048)
+- [ ] Phase 7: Polish - Final refinements (T049-T058)
+
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && git status --short</summary>
+
+```bash
+cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && git status --short
+```
+
+```
+ M .specstory/history/2025-12-11_00-41Z-create-daily-video-application-with-next-js.md
+ M specs/001-video-classroom/tasks.md
+ M src/app/layout.tsx
+ M tsconfig.json
+?? src/components/
+?? src/config/
+?? src/types/
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Phase 2 is complete. Let me ask the user to commit and push.</details></think>
+
+---
+
+---
+
+## ✅ Phase 2: Foundational Complete!
+
+**Branch**: `phase2-foundational`
+
+### Completed Tasks (T008-T013):
+- ✅ T008: TypeScript interfaces in `src/types/index.ts` (Cohort, User, Session, Participant, etc.)
+- ✅ T009: Cohort configuration in `src/config/cohorts.ts` with 6 static cohorts
+- ✅ T010: Global styles already complete from Phase 1
+- ✅ T011: Root layout updated with Header/Footer integration
+- ✅ T012: Header component with Overcast branding and mode toggle UI
+- ✅ T013: Footer component with "Powered by the Overclock Accelerator"
+
+### Files Created:
+- `src/types/index.ts` - All TypeScript interfaces
+- `src/config/cohorts.ts` - Cohort configuration  
+- `src/components/Header.tsx` - Navigation header
+- `src/components/Footer.tsx` - Branding footer
+
+### Build Status: ✅ Compiles Successfully
+
+---
+
+## 🛑 COMMIT CHECKPOINT
+
+Please commit and push Phase 2 changes before I proceed to Phase 3.
+
+**Suggested commands:**
+
+```bash
+cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project
+git add .
+git commit -m "Phase 2: Foundational - Add types, cohort config, Header and Footer components"
+git push -u origin phase2-foundational
+```
+
+**Reply with "continue" when you're ready for me to proceed with Phase 3: User Story 1 - Student Joins Cohort Session (MVP).**
+
+---
+
+_**User (2025-12-11 00:20Z)**_
+
+continue
+
+---
+
+_**Agent (model claude-4.5-opus-high-thinking, mode Agent)**_
+
+<think><details><summary>Thought Process</summary>
+The user wants to continue with Phase 3. Let me pull latest from main (in case they merged) and create a new branch for Phase 3.</details></think>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && git stash && git checkout main && git pull origin main</summary>
+
+```bash
+cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && git stash && git checkout main && git pull origin main
+```
+
+```
+No local changes to save
+Your branch is up to date with 'origin/main'.
+Switched to branch 'main'
+From https://github.com/Tajohnson245/overcast-project
+ * branch            main       -&gt; FETCH_HEAD
+   2cfee69..87b3fc6  main       -&gt; origin/main
+Updating 2cfee69..87b3fc6
+Fast-forward
+ ...-create-daily-video-application-with-next-js.md | 2010 ++++++++++++++++++++
+ specs/001-video-classroom/tasks.md                 |   12 +-
+ src/app/layout.tsx                                 |   18 +-
+ src/components/Footer.tsx                          |   27 +
+ src/components/Header.tsx                          |  115 ++
+ src/config/cohorts.ts                              |   94 +
+ src/types/index.ts                                 |  230 +++
+ tsconfig.json                                      |    2 +-
+ 8 files changed, 2499 insertions(+), 9 deletions(-)
+ create mode 100644 src/components/Footer.tsx
+ create mode 100644 src/components/Header.tsx
+ create mode 100644 src/config/cohorts.ts
+ create mode 100644 src/types/index.ts
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Main is updated. Now let me create a branch for Phase 3 and start implementing the MVP - User Story 1.</details></think>
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && git checkout -b phase3-user-story-1-mvp</summary>
+
+```bash
+cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && git checkout -b phase3-user-story-1-mvp
+```
+
+```
+Switched to a new branch 'phase3-user-story-1-mvp'
+
+```
+</details>
+</tool-use>
+
+---
+
+<tool-use data-tool-type="task" data-tool-name="todo_write">
+<details><summary>Tool use: **todo_write** • Todo List</summary>
+
+- [x] Phase 1: Setup - Initialize Next.js project (T001-T007)
+- [x] Phase 2: Foundational - Types and config (T008-T013)
+- [-] Phase 3: User Story 1 - Student video flow (T014-T027)
+- [ ] Phase 4: User Story 2 - Instructor auth (T028-T037)
+- [ ] Phase 5: User Story 3 - Moderation (T038-T044)
+- [ ] Phase 6: User Story 4 - Persistence (T045-T048)
+- [ ] Phase 7: Polish - Final refinements (T049-T058)
+
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now I'm on phase3-user-story-1-mvp branch. This is the MVP phase with 14 tasks (T014-T027). Let me implement them systematically:
+
+**API Tasks:**
+- T014: GET /api/cohorts endpoint
+- T015: GET /api/cohorts/[cohortId] endpoint  
+- T016: POST /api/daily/token endpoint
+
+**Component Tasks:**
+- T017: CohortTile component
+- T018: CohortGrid component
+- T019: Lobby page
+- T020: ParticipantTile component
+- T021: ParticipantGrid component
+- T022: VideoSession component
+- T023: Session page
+
+**Daily.co Integration:**
+- T024: Daily.co helper functions
+- T025: Connect VideoSession to Daily.co
+- T026: Participant rendering
+- T027: Connection state handling
+
+Let me start with the API routes first.</details></think>
+
+---
+
+Starting **Phase 3: User Story 1 - Student Joins Cohort Session (MVP)**. This is the core video functionality. Let me implement the API routes first:
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: mkdir -p /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/cohorts/\[cohortId\] /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/daily/token /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/session/\[cohortId\] /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/lib</summary>
+
+```bash
+mkdir -p /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/cohorts/\[cohortId\] /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/daily/token /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/session/\[cohortId\] /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/lib
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now let me create the API routes and components. I'll do them in parallel where possible.</details></think>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/cohorts/route.ts</summary>
+
+**Chunk 1**
+Lines added: 39, lines removed: 1
+
+```diff
+@@ -1,1 +1,39 @@
+- 
++ /**
++  * GET /api/cohorts
++  * 
++  * Returns all available cohorts for the lobby display.
++  * Cohorts are loaded from static configuration.
++  */
++ 
++ import { NextResponse } from 'next/server';
++ import { getAllCohorts } from '@/config/cohorts';
++ import type { CohortsResponse } from '@/types';
++ 
++ export async function GET() {
++   try {
++     const cohorts = getAllCohorts();
++     
++     // Return cohorts without exposing internal Daily.co URLs to client
++     // The client will use /api/daily/token to get room access
++     const publicCohorts = cohorts.map(cohort =&gt; ({
++       id: cohort.id,
++       name: cohort.name,
++       image: cohort.image,
++       description: cohort.description,
++       capacity: cohort.capacity,
++     }));
++     
++     const response: CohortsResponse = {
++       cohorts: publicCohorts as CohortsResponse['cohorts'],
++     };
++     
++     return NextResponse.json(response);
++   } catch (error) {
++     console.error('Error fetching cohorts:', error);
++     return NextResponse.json(
++       { error: 'Failed to fetch cohorts' },
++       { status: 500 }
++     );
++   }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/cohorts/[cohortId]/route.ts</summary>
+
+**Chunk 1**
+Lines added: 47, lines removed: 1
+
+```diff
+@@ -1,1 +1,47 @@
+- 
++ /**
++  * GET /api/cohorts/[cohortId]
++  * 
++  * Returns a single cohort by ID.
++  * Used when navigating to a specific cohort session.
++  */
++ 
++ import { NextResponse } from 'next/server';
++ import { getCohortById } from '@/config/cohorts';
++ 
++ interface RouteParams {
++   params: Promise&lt;{
++     cohortId: string;
++   }&gt;;
++ }
++ 
++ export async function GET(request: Request, { params }: RouteParams) {
++   try {
++     const { cohortId } = await params;
++     const cohort = getCohortById(cohortId);
++     
++     if (!cohort) {
++       return NextResponse.json(
++         { error: 'Cohort not found', code: 'NOT_FOUND' },
++         { status: 404 }
++       );
++     }
++     
++     // Return cohort without exposing internal Daily.co URL
++     const publicCohort = {
++       id: cohort.id,
++       name: cohort.name,
++       image: cohort.image,
++       description: cohort.description,
++       capacity: cohort.capacity,
++     };
++     
++     return NextResponse.json(publicCohort);
++   } catch (error) {
++     console.error('Error fetching cohort:', error);
++     return NextResponse.json(
++       { error: 'Failed to fetch cohort' },
++       { status: 500 }
++     );
++   }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/api/daily/token/route.ts</summary>
+
+**Chunk 1**
+Lines added: 99, lines removed: 1
+
+```diff
+@@ -1,1 +1,99 @@
+- 
++ /**
++  * POST /api/daily/token
++  * 
++  * Generates a Daily.co meeting token for joining a room.
++  * Instructor tokens include owner permissions for moderation.
++  * 
++  * Request body:
++  * - roomName: The cohort room to join
++  * - userName: Display name for the participant
++  * - isInstructor: Whether to grant owner permissions (optional)
++  */
++ 
++ import { NextResponse } from 'next/server';
++ import { getCohortById, getRoomNameFromUrl } from '@/config/cohorts';
++ import type { DailyTokenRequest, DailyTokenResponse, ApiError } from '@/types';
++ 
++ export async function POST(request: Request) {
++   try {
++     const body: DailyTokenRequest = await request.json();
++     const { roomName, userName, isInstructor = false } = body;
++     
++     // Validate required fields
++     if (!roomName || !userName) {
++       return NextResponse.json&lt;ApiError&gt;(
++         { error: 'roomName and userName are required', code: 'VALIDATION_ERROR' },
++         { status: 400 }
++       );
++     }
++     
++     // Find the cohort to get the Daily.co room URL
++     const cohortId = roomName.startsWith('cohort-') ? roomName : &#96;cohort-${roomName}&#96;;
++     const cohort = getCohortById(cohortId);
++     
++     if (!cohort) {
++       return NextResponse.json&lt;ApiError&gt;(
++         { error: 'Room not found', code: 'NOT_FOUND' },
++         { status: 404 }
++       );
++     }
++     
++     // Get API key from environment
++     const apiKey = process.env.DAILY_API_KEY;
++     
++     if (!apiKey) {
++       console.error('DAILY_API_KEY not configured');
++       return NextResponse.json&lt;ApiError&gt;(
++         { error: 'Server configuration error', code: 'CONFIG_ERROR' },
++         { status: 500 }
++       );
++     }
++     
++     // Extract room name from Daily.co URL
++     const dailyRoomName = getRoomNameFromUrl(cohort.dailyRoomUrl);
++     
++     // Generate meeting token via Daily.co API
++     const tokenResponse = await fetch('https://api.daily.co/v1/meeting-tokens', {
++       method: 'POST',
++       headers: {
++         'Authorization': &#96;Bearer ${apiKey}&#96;,
++         'Content-Type': 'application/json',
++       },
++       body: JSON.stringify({
++         properties: {
++           room_name: dailyRoomName,
++           user_name: userName,
++           is_owner: isInstructor,
++           enable_screenshare: isInstructor,
++           // Token expires in 1 hour
++           exp: Math.floor(Date.now() / 1000) + 3600,
++         },
++       }),
++     });
++     
++     if (!tokenResponse.ok) {
++       const errorData = await tokenResponse.json().catch(() =&gt; ({}));
++       console.error('Daily.co API error:', errorData);
++       return NextResponse.json&lt;ApiError&gt;(
++         { error: 'Failed to generate meeting token', code: 'DAILY_API_ERROR' },
++         { status: 500 }
++       );
++     }
++     
++     const tokenData = await tokenResponse.json();
++     
++     const response: DailyTokenResponse = {
++       token: tokenData.token,
++       roomUrl: cohort.dailyRoomUrl,
++     };
++     
++     return NextResponse.json(response);
++   } catch (error) {
++     console.error('Error generating token:', error);
++     return NextResponse.json&lt;ApiError&gt;(
++       { error: 'Internal server error' },
++       { status: 500 }
++     );
++   }
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+API routes created. Now let me create the components: CohortTile, CohortGrid, ParticipantTile, ParticipantGrid, and VideoSession.</details></think>
+
+---
+
+Now creating the UI components (T017-T022):
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/components/CohortTile.tsx</summary>
+
+**Chunk 1**
+Lines added: 88, lines removed: 1
+
+```diff
+@@ -1,1 +1,88 @@
+- 
++ 'use client';
++ 
++ /**
++  * CohortTile Component
++  * 
++  * Displays a single cohort as a clickable tile in the lobby grid.
++  * Features futuristic styling with:
++  * - Grayscale to color image transition on hover
++  * - Teal border glow effect
++  * - Smooth animations
++  */
++ 
++ import Image from 'next/image';
++ import Link from 'next/link';
++ 
++ interface CohortTileProps {
++   /** Cohort unique identifier */
++   id: string;
++   /** Display name */
++   name: string;
++   /** Path to cohort image */
++   image: string;
++   /** Brief description */
++   description: string;
++   /** Optional capacity limit */
++   capacity?: number;
++ }
++ 
++ export default function CohortTile({
++   id,
++   name,
++   image,
++   description,
++   capacity,
++ }: CohortTileProps) {
++   return (
++     &lt;Link
++       href={&#96;/session/${id}&#96;}
++       className="group relative block overflow-hidden rounded-lg border border-overcast-gray-dark/30 bg-overcast-dark transition-all duration-300 hover:border-overcast-teal/50 hover:shadow-lg hover:shadow-overcast-teal/10"
++     &gt;
++       {/* Image Container */}
++       &lt;div className="aspect-video relative overflow-hidden"&gt;
++         &lt;Image
++           src={image}
++           alt={&#96;${name} classroom&#96;}
++           fill
++           className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"
++           sizes="(max-width: 768px) 100vw, 50vw"
++         /&gt;
++         
++         {/* Overlay gradient */}
++         &lt;div className="absolute inset-0 bg-gradient-to-t from-overcast-black/80 via-transparent to-transparent" /&gt;
++         
++         {/* Capacity badge */}
++         {capacity &amp;&amp; (
++           &lt;div className="absolute top-3 right-3 rounded-full bg-overcast-black/70 px-2 py-1 text-xs text-overcast-gray backdrop-blur-sm"&gt;
++             {capacity} seats
++           &lt;/div&gt;
++         )}
++       &lt;/div&gt;
++       
++       {/* Content */}
++       &lt;div className="p-4"&gt;
++         {/* Title with teal accent */}
++         &lt;h3 className="text-lg font-bold uppercase tracking-wider text-overcast-teal transition-colors group-hover:text-overcast-white"&gt;
++           {name}
++         &lt;/h3&gt;
++         
++         {/* Description */}
++         &lt;p className="mt-1 text-sm text-overcast-gray line-clamp-2"&gt;
++           {description}
++         &lt;/p&gt;
++         
++         {/* Join indicator */}
++         &lt;div className="mt-3 flex items-center gap-2 text-xs text-overcast-gray transition-colors group-hover:text-overcast-teal"&gt;
++           &lt;span className="inline-block h-2 w-2 rounded-full bg-overcast-teal animate-pulse" /&gt;
++           Click to join session
++         &lt;/div&gt;
++       &lt;/div&gt;
++       
++       {/* Hover glow effect */}
++       &lt;div className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100 pointer-events-none"&gt;
++         &lt;div className="absolute inset-0 rounded-lg border border-overcast-teal/30" /&gt;
++       &lt;/div&gt;
++     &lt;/Link&gt;
++   );
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/components/CohortGrid.tsx</summary>
+
+**Chunk 1**
+Lines added: 53, lines removed: 1
+
+```diff
+@@ -1,1 +1,53 @@
+- 
++ 'use client';
++ 
++ /**
++  * CohortGrid Component
++  * 
++  * Displays all 6 cohorts in a responsive 2-column, 3-row grid.
++  * Used on the main lobby page.
++  */
++ 
++ import CohortTile from './CohortTile';
++ import type { Cohort } from '@/types';
++ 
++ interface CohortGridProps {
++   /** Array of cohorts to display */
++   cohorts: Omit&lt;Cohort, 'dailyRoomUrl'&gt;[];
++ }
++ 
++ export default function CohortGrid({ cohorts }: CohortGridProps) {
++   if (cohorts.length === 0) {
++     return (
++       &lt;div className="flex flex-col items-center justify-center py-20 text-center"&gt;
++         &lt;div className="text-4xl mb-4"&gt;📚&lt;/div&gt;
++         &lt;h3 className="text-xl font-semibold text-overcast-white mb-2"&gt;
++           No Cohorts Available
++         &lt;/h3&gt;
++         &lt;p className="text-overcast-gray"&gt;
++           Check back later for upcoming sessions.
++         &lt;/p&gt;
++       &lt;/div&gt;
++     );
++   }
++ 
++   return (
++     &lt;div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8"&gt;
++       {cohorts.map((cohort, index) =&gt; (
++         &lt;div
++           key={cohort.id}
++           className="animate-fade-in"
++           style={{ animationDelay: &#96;${index * 100}ms&#96; }}
++         &gt;
++           &lt;CohortTile
++             id={cohort.id}
++             name={cohort.name}
++             image={cohort.image}
++             description={cohort.description}
++             capacity={cohort.capacity}
++           /&gt;
++         &lt;/div&gt;
++       ))}
++     &lt;/div&gt;
++   );
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/components/ParticipantTile.tsx</summary>
+
+**Chunk 1**
+Lines added: 98, lines removed: 1
+
+```diff
+@@ -1,1 +1,98 @@
+- 
++ 'use client';
++ 
++ /**
++  * ParticipantTile Component
++  * 
++  * Displays a single participant's video tile in the session.
++  * Shows video feed, name, and audio/video status indicators.
++  */
++ 
++ import { useEffect, useRef } from 'react';
++ import { useParticipantProperty } from '@daily-co/daily-react';
++ 
++ interface ParticipantTileProps {
++   /** Daily.co session ID */
++   sessionId: string;
++   /** Whether this is the local user */
++   isLocal?: boolean;
++ }
++ 
++ export default function ParticipantTile({ sessionId, isLocal = false }: ParticipantTileProps) {
++   const videoRef = useRef&lt;HTMLVideoElement&gt;(null);
++   
++   // Get participant properties using Daily React hooks
++   const userName = useParticipantProperty(sessionId, 'user_name');
++   const videoState = useParticipantProperty(sessionId, 'tracks.video.state');
++   const audioState = useParticipantProperty(sessionId, 'tracks.audio.state');
++   const videoTrack = useParticipantProperty(sessionId, 'tracks.video.persistentTrack');
++   
++   // Attach video track to video element
++   useEffect(() =&gt; {
++     const video = videoRef.current;
++     if (!video || !videoTrack) return;
++     
++     video.srcObject = new MediaStream([videoTrack]);
++   }, [videoTrack]);
++   
++   const isVideoPlayable = videoState === 'playable';
++   const isAudioPlayable = audioState === 'playable';
++   const displayName = userName || 'Guest';
++   
++   return (
++     &lt;div className="relative aspect-video overflow-hidden rounded-lg border border-overcast-gray-dark/30 bg-overcast-dark"&gt;
++       {/* Video element */}
++       {isVideoPlayable ? (
++         &lt;video
++           ref={videoRef}
++           autoPlay
++           playsInline
++           muted={isLocal} // Mute local video to prevent echo
++           className="h-full w-full object-cover"
++         /&gt;
++       ) : (
++         // Placeholder when video is off
++         &lt;div className="flex h-full w-full items-center justify-center bg-overcast-dark"&gt;
++           &lt;div className="flex h-16 w-16 items-center justify-center rounded-full bg-overcast-gray-dark text-2xl font-bold text-overcast-teal"&gt;
++             {displayName.charAt(0).toUpperCase()}
++           &lt;/div&gt;
++         &lt;/div&gt;
++       )}
++       
++       {/* Overlay with participant info */}
++       &lt;div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-overcast-black/80 to-transparent p-3"&gt;
++         &lt;div className="flex items-center justify-between"&gt;
++           {/* Name and local indicator */}
++           &lt;div className="flex items-center gap-2"&gt;
++             &lt;span className="text-sm font-medium text-overcast-white truncate max-w-[150px]"&gt;
++               {displayName}
++             &lt;/span&gt;
++             {isLocal &amp;&amp; (
++               &lt;span className="rounded bg-overcast-teal/20 px-1.5 py-0.5 text-xs text-overcast-teal"&gt;
++                 You
++               &lt;/span&gt;
++             )}
++           &lt;/div&gt;
++           
++           {/* Status indicators */}
++           &lt;div className="flex items-center gap-2"&gt;
++             {/* Video status */}
++             &lt;span className={&#96;text-sm ${isVideoPlayable ? 'text-overcast-teal' : 'text-overcast-gray'}&#96;}&gt;
++               {isVideoPlayable ? '📹' : '📷'}
++             &lt;/span&gt;
++             
++             {/* Audio status */}
++             &lt;span className={&#96;text-sm ${isAudioPlayable ? 'text-overcast-teal' : 'text-red-500'}&#96;}&gt;
++               {isAudioPlayable ? '🎙️' : '🔇'}
++             &lt;/span&gt;
++           &lt;/div&gt;
++         &lt;/div&gt;
++       &lt;/div&gt;
++       
++       {/* Local indicator border */}
++       {isLocal &amp;&amp; (
++         &lt;div className="absolute inset-0 rounded-lg border-2 border-overcast-teal/50 pointer-events-none" /&gt;
++       )}
++     &lt;/div&gt;
++   );
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/components/ParticipantGrid.tsx</summary>
+
+**Chunk 1**
+Lines added: 55, lines removed: 1
+
+```diff
+@@ -1,1 +1,55 @@
+- 
++ 'use client';
++ 
++ /**
++  * ParticipantGrid Component
++  * 
++  * Displays all participants in a responsive grid layout.
++  * Automatically adjusts grid columns based on participant count.
++  */
++ 
++ import { useParticipantIds } from '@daily-co/daily-react';
++ import ParticipantTile from './ParticipantTile';
++ 
++ export default function ParticipantGrid() {
++   // Get all participant IDs, with local participant first
++   const participantIds = useParticipantIds({ 
++     sort: 'joined_at',
++   });
++   
++   // Determine grid columns based on participant count
++   const getGridClass = () =&gt; {
++     const count = participantIds.length;
++     if (count === 1) return 'grid-cols-1 max-w-2xl mx-auto';
++     if (count === 2) return 'grid-cols-1 md:grid-cols-2';
++     if (count &lt;= 4) return 'grid-cols-2';
++     if (count &lt;= 6) return 'grid-cols-2 md:grid-cols-3';
++     return 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4';
++   };
++   
++   if (participantIds.length === 0) {
++     return (
++       &lt;div className="flex flex-col items-center justify-center py-20 text-center"&gt;
++         &lt;div className="animate-pulse-teal text-4xl mb-4"&gt;👋&lt;/div&gt;
++         &lt;h3 className="text-xl font-semibold text-overcast-white mb-2"&gt;
++           Waiting for participants...
++         &lt;/h3&gt;
++         &lt;p className="text-overcast-gray"&gt;
++           You&amp;apos;re the first one here. Others will appear when they join.
++         &lt;/p&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   return (
++     &lt;div className={&#96;grid gap-4 ${getGridClass()}&#96;}&gt;
++       {participantIds.map((id) =&gt; (
++         &lt;ParticipantTile
++           key={id}
++           sessionId={id}
++           isLocal={id === 'local'}
++         /&gt;
++       ))}
++     &lt;/div&gt;
++   );
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now let me create the VideoSession component, Daily.co helper functions, and the lobby and session pages.</details></think>
+
+---
+
+Now creating the VideoSession component, Daily helpers, and pages:
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/lib/daily.ts</summary>
+
+**Chunk 1**
+Lines added: 59, lines removed: 1
+
+```diff
+@@ -1,1 +1,59 @@
+- 
++ /**
++  * Daily.co Helper Functions
++  * 
++  * Utilities for interacting with the Daily.co API and managing video sessions.
++  */
++ 
++ import type { DailyTokenRequest, DailyTokenResponse } from '@/types';
++ 
++ /**
++  * Fetch a meeting token from our API.
++  * The token is required to join a Daily.co room.
++  */
++ export async function getDailyToken(
++   roomName: string,
++   userName: string,
++   isInstructor: boolean = false
++ ): Promise&lt;DailyTokenResponse&gt; {
++   const response = await fetch('/api/daily/token', {
++     method: 'POST',
++     headers: {
++       'Content-Type': 'application/json',
++     },
++     body: JSON.stringify({
++       roomName,
++       userName,
++       isInstructor,
++     } as DailyTokenRequest),
++   });
++   
++   if (!response.ok) {
++     const error = await response.json().catch(() =&gt; ({ error: 'Unknown error' }));
++     throw new Error(error.error || 'Failed to get meeting token');
++   }
++   
++   return response.json();
++ }
++ 
++ /**
++  * Extract the room name from a cohort ID.
++  * Cohort IDs are already in the format "cohort-1", "cohort-2", etc.
++  */
++ export function getCohortRoomName(cohortId: string): string {
++   return cohortId;
++ }
++ 
++ /**
++  * Generate a random guest name for anonymous users.
++  */
++ export function generateGuestName(): string {
++   const adjectives = ['Swift', 'Bright', 'Clever', 'Quick', 'Sharp', 'Bold', 'Keen', 'Wise'];
++   const nouns = ['Learner', 'Student', 'Coder', 'Builder', 'Maker', 'Hacker', 'Engineer', 'Dev'];
++   
++   const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
++   const noun = nouns[Math.floor(Math.random() * nouns.length)];
++   const number = Math.floor(Math.random() * 100);
++   
++   return &#96;${adjective}${noun}${number}&#96;;
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/components/VideoSession.tsx</summary>
+
+**Chunk 1**
+Lines added: 217, lines removed: 1
+
+```diff
+@@ -1,1 +1,217 @@
+- 
++ 'use client';
++ 
++ /**
++  * VideoSession Component
++  * 
++  * Main video session container that:
++  * - Wraps content with DailyProvider for Daily.co integration
++  * - Manages connection state (joining, joined, error)
++  * - Handles joining and leaving the room
++  * - Renders participant grid
++  */
++ 
++ import { useEffect, useState, useCallback } from 'react';
++ import { DailyProvider, useDaily, useDailyEvent } from '@daily-co/daily-react';
++ import DailyIframe from '@daily-co/daily-js';
++ import ParticipantGrid from './ParticipantGrid';
++ import { getDailyToken, generateGuestName } from '@/lib/daily';
++ import type { ConnectionState } from '@/types';
++ 
++ interface VideoSessionProps {
++   /** Cohort ID to join */
++   cohortId: string;
++   /** Cohort display name */
++   cohortName: string;
++   /** Optional user display name */
++   userName?: string;
++   /** Whether user is an instructor */
++   isInstructor?: boolean;
++ }
++ 
++ /**
++  * Inner component that has access to Daily.co hooks
++  */
++ function VideoSessionInner({ 
++   cohortId, 
++   cohortName,
++   userName,
++   isInstructor = false,
++ }: VideoSessionProps) {
++   const daily = useDaily();
++   const [connectionState, setConnectionState] = useState&lt;ConnectionState&gt;('idle');
++   const [error, setError] = useState&lt;string | null&gt;(null);
++   
++   // Handle joining the room
++   const joinRoom = useCallback(async () =&gt; {
++     if (!daily || connectionState !== 'idle') return;
++     
++     setConnectionState('joining');
++     setError(null);
++     
++     try {
++       // Get meeting token from our API
++       const displayName = userName || generateGuestName();
++       const { token, roomUrl } = await getDailyToken(cohortId, displayName, isInstructor);
++       
++       // Join the Daily.co room
++       await daily.join({
++         url: roomUrl,
++         token,
++         userName: displayName,
++       });
++       
++       setConnectionState('joined');
++     } catch (err) {
++       console.error('Failed to join room:', err);
++       setError(err instanceof Error ? err.message : 'Failed to join room');
++       setConnectionState('error');
++     }
++   }, [daily, cohortId, userName, isInstructor, connectionState]);
++   
++   // Handle leaving the room
++   const leaveRoom = useCallback(async () =&gt; {
++     if (!daily || connectionState !== 'joined') return;
++     
++     setConnectionState('leaving');
++     
++     try {
++       await daily.leave();
++       setConnectionState('idle');
++     } catch (err) {
++       console.error('Failed to leave room:', err);
++       setConnectionState('idle');
++     }
++   }, [daily, connectionState]);
++   
++   // Listen for Daily.co events
++   useDailyEvent('joined-meeting', () =&gt; {
++     setConnectionState('joined');
++   });
++   
++   useDailyEvent('left-meeting', () =&gt; {
++     setConnectionState('idle');
++   });
++   
++   useDailyEvent('error', (event) =&gt; {
++     console.error('Daily.co error:', event);
++     setError(event?.error?.message || 'An error occurred');
++     setConnectionState('error');
++   });
++   
++   // Auto-join when component mounts
++   useEffect(() =&gt; {
++     if (connectionState === 'idle' &amp;&amp; daily) {
++       joinRoom();
++     }
++   }, [daily, connectionState, joinRoom]);
++   
++   // Render based on connection state
++   if (connectionState === 'joining') {
++     return (
++       &lt;div className="flex flex-col items-center justify-center py-20"&gt;
++         &lt;div className="h-12 w-12 animate-spin rounded-full border-4 border-overcast-teal border-t-transparent mb-4" /&gt;
++         &lt;h3 className="text-xl font-semibold text-overcast-white mb-2"&gt;
++           Joining {cohortName}...
++         &lt;/h3&gt;
++         &lt;p className="text-overcast-gray"&gt;
++           Please allow camera and microphone access when prompted.
++         &lt;/p&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   if (connectionState === 'error') {
++     return (
++       &lt;div className="flex flex-col items-center justify-center py-20"&gt;
++         &lt;div className="text-4xl mb-4"&gt;⚠️&lt;/div&gt;
++         &lt;h3 className="text-xl font-semibold text-red-400 mb-2"&gt;
++           Connection Error
++         &lt;/h3&gt;
++         &lt;p className="text-overcast-gray mb-4"&gt;
++           {error || 'Failed to connect to the session.'}
++         &lt;/p&gt;
++         &lt;button
++           onClick={() =&gt; {
++             setConnectionState('idle');
++             setError(null);
++           }}
++           className="rounded-lg bg-overcast-teal px-4 py-2 font-medium text-overcast-black transition-colors hover:bg-overcast-teal-dim"
++         &gt;
++           Try Again
++         &lt;/button&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   if (connectionState === 'leaving') {
++     return (
++       &lt;div className="flex flex-col items-center justify-center py-20"&gt;
++         &lt;div className="h-12 w-12 animate-spin rounded-full border-4 border-overcast-gray border-t-transparent mb-4" /&gt;
++         &lt;h3 className="text-xl font-semibold text-overcast-white"&gt;
++           Leaving session...
++         &lt;/h3&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   // Joined state - show participant grid
++   return (
++     &lt;div className="space-y-6"&gt;
++       {/* Connection status bar */}
++       &lt;div className="flex items-center justify-between rounded-lg bg-overcast-dark/50 px-4 py-2"&gt;
++         &lt;div className="flex items-center gap-2"&gt;
++           &lt;span className="h-2 w-2 rounded-full bg-green-500 animate-pulse" /&gt;
++           &lt;span className="text-sm text-overcast-gray"&gt;Connected to {cohortName}&lt;/span&gt;
++         &lt;/div&gt;
++         &lt;button
++           onClick={leaveRoom}
++           className="text-sm text-overcast-gray hover:text-overcast-white transition-colors"
++         &gt;
++           Leave quietly
++         &lt;/button&gt;
++       &lt;/div&gt;
++       
++       {/* Participant video grid */}
++       &lt;ParticipantGrid /&gt;
++     &lt;/div&gt;
++   );
++ }
++ 
++ /**
++  * Main VideoSession component that wraps with DailyProvider
++  */
++ export default function VideoSession(props: VideoSessionProps) {
++   const [callObject, setCallObject] = useState&lt;ReturnType&lt;typeof DailyIframe.createCallObject&gt; | null&gt;(null);
++   
++   // Create call object on mount
++   useEffect(() =&gt; {
++     const newCallObject = DailyIframe.createCallObject({
++       dailyConfig: {
++         // CSP-friendly mode
++         avoidEval: true,
++       },
++     });
++     
++     setCallObject(newCallObject);
++     
++     // Cleanup on unmount
++     return () =&gt; {
++       newCallObject.destroy();
++     };
++   }, []);
++   
++   if (!callObject) {
++     return (
++       &lt;div className="flex items-center justify-center py-20"&gt;
++         &lt;div className="h-8 w-8 animate-spin rounded-full border-2 border-overcast-teal border-t-transparent" /&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   return (
++     &lt;DailyProvider callObject={callObject}&gt;
++       &lt;VideoSessionInner {...props} /&gt;
++     &lt;/DailyProvider&gt;
++   );
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now let me create the lobby page and the session page.</details></think>
+
+---
+
+Now creating the lobby page and session page:
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 50, lines removed: 59
+
+```diff
+@@ -1,64 +1,55 @@
+- import Image from "next/image";
++ /**
++  * Main Lobby Page
++  * 
++  * Displays the 6 cohort tiles in a grid layout.
++  * Students click a cohort to join that session.
++  */
++ 
++ import CohortGrid from '@/components/CohortGrid';
++ import { getAllCohorts } from '@/config/cohorts';
+  
+- export default function Home() {
++ export default function LobbyPage() {
++   // Get cohorts from configuration (server-side)
++   const cohorts = getAllCohorts();
++   
++   // Remove dailyRoomUrl from client-facing data
++   const publicCohorts = cohorts.map(({ dailyRoomUrl, ...cohort }) =&gt; cohort);
++   
+    return (
+-     &lt;div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black"&gt;
+-       &lt;main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start"&gt;
+-         &lt;Image
+-           className="dark:invert"
+-           src="/next.svg"
+-           alt="Next.js logo"
+-           width={100}
+-           height={20}
+-           priority
+-         /&gt;
+-         &lt;div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left"&gt;
+-           &lt;h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50"&gt;
+-             To get started, edit the page.tsx file.
+-           &lt;/h1&gt;
+-           &lt;p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"&gt;
+-             Looking for a starting point or more instructions? Head over to{" "}
+-             &lt;a
+-               href="https://vercel.com/templates?framework=next.js&amp;utm_source=create-next-app&amp;utm_medium=appdir-template-tw&amp;utm_campaign=create-next-app"
+-               className="font-medium text-zinc-950 dark:text-zinc-50"
+-             &gt;
+-               Templates
+-             &lt;/a&gt;{" "}
+-             or the{" "}
+-             &lt;a
+-               href="https://nextjs.org/learn?utm_source=create-next-app&amp;utm_medium=appdir-template-tw&amp;utm_campaign=create-next-app"
+-               className="font-medium text-zinc-950 dark:text-zinc-50"
+-             &gt;
+-               Learning
+-             &lt;/a&gt;{" "}
+-             center.
+-           &lt;/p&gt;
++     &lt;div className="container mx-auto px-4 py-8"&gt;
++       {/* Hero Section */}
++       &lt;div className="mb-12 text-center"&gt;
++         &lt;h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"&gt;
++           &lt;span className="text-overcast-white"&gt;AI Engineering&lt;/span&gt;
++           &lt;br /&gt;
++           &lt;span className="text-overcast-teal"&gt;Accelerator&lt;/span&gt;
++         &lt;/h1&gt;
++         &lt;p className="mt-4 text-lg text-overcast-gray max-w-2xl mx-auto"&gt;
++           Join a live cohort session to learn cutting-edge AI engineering skills 
++           with expert instructors and fellow engineers.
++         &lt;/p&gt;
++         
++         {/* Status indicator */}
++         &lt;div className="mt-6 inline-flex items-center gap-2 rounded-full bg-overcast-dark px-4 py-2 text-sm"&gt;
++           &lt;span className="h-2 w-2 rounded-full bg-overcast-teal animate-pulse" /&gt;
++           &lt;span className="text-overcast-gray"&gt;
++             &lt;span className="text-overcast-white font-medium"&gt;6&lt;/span&gt; cohorts available
++           &lt;/span&gt;
+          &lt;/div&gt;
+-         &lt;div className="flex flex-col gap-4 text-base font-medium sm:flex-row"&gt;
+-           &lt;a
+-             className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+-             href="https://vercel.com/new?utm_source=create-next-app&amp;utm_medium=appdir-template-tw&amp;utm_campaign=create-next-app"
+-             target="_blank"
+-             rel="noopener noreferrer"
+-           &gt;
+-             &lt;Image
+-               className="dark:invert"
+-               src="/vercel.svg"
+-               alt="Vercel logomark"
+-               width={16}
+-               height={16}
+-             /&gt;
+-             Deploy Now
+-           &lt;/a&gt;
+-           &lt;a
+-             className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+-             href="https://nextjs.org/docs?utm_source=create-next-app&amp;utm_medium=appdir-template-tw&amp;utm_campaign=create-next-app"
+-             target="_blank"
+-             rel="noopener noreferrer"
+-           &gt;
+-             Documentation
+-           &lt;/a&gt;
+-         &lt;/div&gt;
+-       &lt;/main&gt;
++       &lt;/div&gt;
++       
++       {/* Cohort Grid */}
++       &lt;section aria-label="Available Cohorts"&gt;
++         &lt;CohortGrid cohorts={publicCohorts} /&gt;
++       &lt;/section&gt;
++       
++       {/* Instructions */}
++       &lt;div className="mt-12 text-center text-sm text-overcast-gray"&gt;
++         &lt;p&gt;
++           Click on a cohort tile to join the live video session.
++           &lt;br /&gt;
++           Make sure your camera and microphone are ready.
++         &lt;/p&gt;
++       &lt;/div&gt;
+      &lt;/div&gt;
+    );
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<tool-use data-tool-type="write" data-tool-name="write">
+
+<details><summary>Tool use: **write** • Edit file: /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/src/app/session/[cohortId]/page.tsx</summary>
+
+**Chunk 1**
+Lines added: 142, lines removed: 1
+
+```diff
+@@ -1,1 +1,142 @@
+- 
++ 'use client';
++ 
++ /**
++  * Video Session Page
++  * 
++  * Displays the video session for a specific cohort.
++  * Includes:
++  * - Cohort name and description
++  * - Video session with all participants
++  * - Return to lobby button
++  */
++ 
++ import { useEffect, useState } from 'react';
++ import { useParams, useRouter } from 'next/navigation';
++ import Link from 'next/link';
++ import VideoSession from '@/components/VideoSession';
++ import type { Cohort } from '@/types';
++ 
++ export default function SessionPage() {
++   const params = useParams();
++   const router = useRouter();
++   const cohortId = params.cohortId as string;
++   
++   const [cohort, setCohort] = useState&lt;Omit&lt;Cohort, 'dailyRoomUrl'&gt; | null&gt;(null);
++   const [loading, setLoading] = useState(true);
++   const [error, setError] = useState&lt;string | null&gt;(null);
++   
++   // Fetch cohort details
++   useEffect(() =&gt; {
++     async function fetchCohort() {
++       try {
++         const response = await fetch(&#96;/api/cohorts/${cohortId}&#96;);
++         
++         if (!response.ok) {
++           if (response.status === 404) {
++             setError('Cohort not found');
++           } else {
++             setError('Failed to load cohort');
++           }
++           return;
++         }
++         
++         const data = await response.json();
++         setCohort(data);
++       } catch (err) {
++         console.error('Failed to fetch cohort:', err);
++         setError('Failed to load cohort');
++       } finally {
++         setLoading(false);
++       }
++     }
++     
++     fetchCohort();
++   }, [cohortId]);
++   
++   // Loading state
++   if (loading) {
++     return (
++       &lt;div className="container mx-auto px-4 py-8"&gt;
++         &lt;div className="flex flex-col items-center justify-center py-20"&gt;
++           &lt;div className="h-12 w-12 animate-spin rounded-full border-4 border-overcast-teal border-t-transparent mb-4" /&gt;
++           &lt;p className="text-overcast-gray"&gt;Loading session...&lt;/p&gt;
++         &lt;/div&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   // Error state
++   if (error || !cohort) {
++     return (
++       &lt;div className="container mx-auto px-4 py-8"&gt;
++         &lt;div className="flex flex-col items-center justify-center py-20"&gt;
++           &lt;div className="text-4xl mb-4"&gt;😕&lt;/div&gt;
++           &lt;h2 className="text-2xl font-bold text-overcast-white mb-2"&gt;
++             {error || 'Session Not Found'}
++           &lt;/h2&gt;
++           &lt;p className="text-overcast-gray mb-6"&gt;
++             This cohort session may not be available right now.
++           &lt;/p&gt;
++           &lt;Link
++             href="/"
++             className="rounded-lg bg-overcast-teal px-6 py-3 font-medium text-overcast-black transition-colors hover:bg-overcast-teal-dim"
++           &gt;
++             Return to Main Lobby
++           &lt;/Link&gt;
++         &lt;/div&gt;
++       &lt;/div&gt;
++     );
++   }
++   
++   return (
++     &lt;div className="container mx-auto px-4 py-6"&gt;
++       {/* Session Header */}
++       &lt;div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"&gt;
++         &lt;div&gt;
++           &lt;h1 className="text-2xl font-bold text-overcast-teal md:text-3xl"&gt;
++             {cohort.name}
++           &lt;/h1&gt;
++           &lt;p className="mt-1 text-overcast-gray"&gt;
++             {cohort.description}
++           &lt;/p&gt;
++         &lt;/div&gt;
++         
++         &lt;Link
++           href="/"
++           className="inline-flex items-center gap-2 rounded-lg border border-overcast-gray-dark px-4 py-2 text-sm font-medium text-overcast-white transition-colors hover:border-overcast-teal hover:text-overcast-teal"
++         &gt;
++           &lt;svg 
++             className="h-4 w-4" 
++             fill="none" 
++             stroke="currentColor" 
++             viewBox="0 0 24 24"
++           &gt;
++             &lt;path 
++               strokeLinecap="round" 
++               strokeLinejoin="round" 
++               strokeWidth={2} 
++               d="M10 19l-7-7m0 0l7-7m-7 7h18" 
++             /&gt;
++           &lt;/svg&gt;
++           Return to Main Lobby
++         &lt;/Link&gt;
++       &lt;/div&gt;
++       
++       {/* Video Session */}
++       &lt;div className="rounded-xl border border-overcast-gray-dark/30 bg-overcast-dark/30 p-4 md:p-6"&gt;
++         &lt;VideoSession
++           cohortId={cohort.id}
++           cohortName={cohort.name}
++         /&gt;
++       &lt;/div&gt;
++       
++       {/* Session Footer */}
++       &lt;div className="mt-6 text-center text-sm text-overcast-gray"&gt;
++         &lt;p&gt;
++           Having trouble? Try refreshing the page or checking your camera/microphone permissions.
++         &lt;/p&gt;
++       &lt;/div&gt;
++     &lt;/div&gt;
++   );
++ }
++ 
+```
+
+</details>
+
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Now let me verify the build and check for any lint errors.</details></think>
+
+---
+
+Let me verify the build and check for any issues:
+
+---
+
+<tool-use data-tool-type="shell" data-tool-name="run_terminal_cmd">
+<details><summary>Tool use: **run_terminal_cmd** • Run command: cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && npm run build 2>&1</summary>
+
+```bash
+cd /home/tajohnson245/overclock/beyond-coding-vibe/overcast-project && npm run build 2>&1
+```
+
+```
+
+&gt; nextjs@0.1.0 build
+&gt; next build
+
+   ▲ Next.js 16.0.8 (Turbopack)
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 2.6s
+   Running TypeScript ...
+   Collecting page data using 15 workers ...
+   Generating static pages using 15 workers (0/6) ...
+   Generating static pages using 15 workers (1/6) 
+   Generating static pages using 15 workers (2/6) 
+   Generating static pages using 15 workers (4/6) 
+ ✓ Generating static pages using 15 workers (6/6) in 702.3ms
+   Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /api/cohorts
+├ ƒ /api/cohorts/[cohortId]
+├ ƒ /api/daily/token
+└ ƒ /session/[cohortId]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+```
+</details>
+</tool-use>
+
+---
+
+<think><details><summary>Thought Process</summary>
+Build successful! All routes are created:
+- / (lobby)
+- /api/cohorts
+- /api/cohorts/[cohortId]- /api/daily/token
+- /session/[cohortId]
+
+Now let me update the tasks.md file to mark all Phase 3 tasks as complete and ask for commit.</details></think>
+
+---
+
+Excellent! Build successful. Now updating tasks and preparing for commit:
 
 ---
 
 <tool-use data-tool-type="unknown" data-tool-name="search_replace">
 <details>
 <summary>Tool use: **search_replace**</summary>
+
+
+Parameters:
+
+```json
+{
+  "relativeWorkspacePath": "/home/tajohnson245/overclock/beyond-coding-vibe/overcast-project/specs/001-video-classroom/tasks.md"
+}
+```
+Additional data:
+
+```json
+{
+  "codeblockId": "bf45d93e-bf8e-4ac9-9c09-e83d105f9708"
+}
+```
+User decision: **accepted**
 
 Status: **loading**
 

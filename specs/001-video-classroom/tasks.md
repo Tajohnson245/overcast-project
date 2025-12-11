@@ -55,26 +55,26 @@
 
 ### API for User Story 1
 
-- [ ] T014 [US1] Implement GET /api/cohorts endpoint in src/app/api/cohorts/route.ts
-- [ ] T015 [P] [US1] Implement GET /api/cohorts/[cohortId] endpoint in src/app/api/cohorts/[cohortId]/route.ts
-- [ ] T016 [US1] Implement POST /api/daily/token endpoint in src/app/api/daily/token/route.ts
+- [x] T014 [US1] Implement GET /api/cohorts endpoint in src/app/api/cohorts/route.ts
+- [x] T015 [P] [US1] Implement GET /api/cohorts/[cohortId] endpoint in src/app/api/cohorts/[cohortId]/route.ts
+- [x] T016 [US1] Implement POST /api/daily/token endpoint in src/app/api/daily/token/route.ts
 
 ### Components for User Story 1
 
-- [ ] T017 [P] [US1] Create CohortTile component with image, name, hover effects in src/components/CohortTile.tsx
-- [ ] T018 [US1] Create CohortGrid component with 2x3 layout in src/components/CohortGrid.tsx (uses CohortTile)
-- [ ] T019 [US1] Implement lobby page with CohortGrid in src/app/page.tsx
-- [ ] T020 [P] [US1] Create ParticipantTile component with video/audio display in src/components/ParticipantTile.tsx
-- [ ] T021 [US1] Create ParticipantGrid component for video layout in src/components/ParticipantGrid.tsx (uses ParticipantTile)
-- [ ] T022 [US1] Create VideoSession component with DailyProvider wrapper in src/components/VideoSession.tsx
-- [ ] T023 [US1] Implement session page at src/app/session/[cohortId]/page.tsx with VideoSession, "Return to Main Lobby" button
+- [x] T017 [P] [US1] Create CohortTile component with image, name, hover effects in src/components/CohortTile.tsx
+- [x] T018 [US1] Create CohortGrid component with 2x3 layout in src/components/CohortGrid.tsx (uses CohortTile)
+- [x] T019 [US1] Implement lobby page with CohortGrid in src/app/page.tsx
+- [x] T020 [P] [US1] Create ParticipantTile component with video/audio display in src/components/ParticipantTile.tsx
+- [x] T021 [US1] Create ParticipantGrid component for video layout in src/components/ParticipantGrid.tsx (uses ParticipantTile)
+- [x] T022 [US1] Create VideoSession component with DailyProvider wrapper in src/components/VideoSession.tsx
+- [x] T023 [US1] Implement session page at src/app/session/[cohortId]/page.tsx with VideoSession, "Return to Main Lobby" button
 
 ### Daily.co Integration for User Story 1
 
-- [ ] T024 [US1] Create Daily.co helper functions in src/lib/daily.ts (join room, leave room, get token)
-- [ ] T025 [US1] Connect VideoSession to Daily.co room using useDaily() hook
-- [ ] T026 [US1] Implement participant rendering with useParticipantIds() and useParticipant() hooks
-- [ ] T027 [US1] Add connection state handling (joining, joined, error) with user feedback
+- [x] T024 [US1] Create Daily.co helper functions in src/lib/daily.ts (join room, leave room, get token)
+- [x] T025 [US1] Connect VideoSession to Daily.co room using useDaily() hook
+- [x] T026 [US1] Implement participant rendering with useParticipantIds() and useParticipant() hooks
+- [x] T027 [US1] Add connection state handling (joining, joined, error) with user feedback
 
 **Checkpoint**: Complete student flow works - lobby → join session → see video → return to lobby
 
