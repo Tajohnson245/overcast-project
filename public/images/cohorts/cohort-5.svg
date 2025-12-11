@@ -1,0 +1,18 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#0A0A0A"/>
+    </linearGradient>
+    <pattern id="grid5" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00FFD1" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg5)"/>
+  <rect width="400" height="300" fill="url(#grid5)"/>
+  <path d="M 150 130 Q 200 70 250 130 Q 200 190 150 130" fill="none" stroke="#00FFD1" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="120" r="15" fill="#00FFD1" opacity="0.3"/>
+  <text x="200" y="200" text-anchor="middle" fill="#00FFD1" font-family="sans-serif" font-size="24" font-weight="bold">COHORT 5</text>
+  <text x="200" y="230" text-anchor="middle" fill="#888888" font-family="sans-serif" font-size="14">LLM Engineering</text>
+</svg>
+

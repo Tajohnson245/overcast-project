@@ -1,0 +1,154 @@
+/**
+ * Overcast Video Classroom - Global Styles
+ * 
+ * Futuristic aesthetic with:
+ * - Black (#0A0A0A) background
+ * - Teal (#00FFD1) accents
+ * - Orange (#FFBD17) highlights
+ */
+
+@import "tailwindcss";
+
+/* =============================================================================
+   Custom Theme Configuration (Tailwind v4)
+   ============================================================================= */
+
+@theme inline {
+  /* Color Palette - Overcast Futuristic Theme */
+  --color-overcast-black: #0A0A0A;
+  --color-overcast-dark: #1A1A1A;
+  --color-overcast-teal: #00FFD1;
+  --color-overcast-teal-dim: #00B894;
+  --color-overcast-orange: #FFBD17;
+  --color-overcast-white: #FFFFFF;
+  --color-overcast-gray: #888888;
+  --color-overcast-gray-dark: #333333;
+  
+  /* Background and Foreground */
+  --color-background: var(--color-overcast-black);
+  --color-foreground: var(--color-overcast-white);
+  
+  /* Font Families */
+  --font-display: var(--font-cabinet-grotesk), system-ui, sans-serif;
+  --font-body: var(--font-cabinet-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
+/* =============================================================================
+   Base Styles
+   ============================================================================= */
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =============================================================================
+   Custom Animations
+   ============================================================================= */
+
+@keyframes pulse-teal {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 209, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 255, 209, 0.6);
+  }
+}
+
+/* Animation utility classes */
+.animate-pulse-teal {
+  animation: pulse-teal 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* =============================================================================
+   Focus and Accessibility
+   ============================================================================= */
+
+*:focus-visible {
+  outline: 2px solid #00FFD1;
+  outline-offset: 2px;
+}
+
+/* =============================================================================
+   Scrollbar Styling (Webkit browsers)
+   ============================================================================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00FFD1;
+}
+
+/* =============================================================================
+   Selection Styling
+   ============================================================================= */
+
+::selection {
+  background: rgba(0, 255, 209, 0.3);
+  color: #FFFFFF;
+}
+
+/* =============================================================================
+   Video Grid Backgrounds
+   ============================================================================= */
+
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(0, 255, 209, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 209, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
