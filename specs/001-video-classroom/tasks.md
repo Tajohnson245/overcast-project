@@ -157,16 +157,16 @@
 
 **Purpose**: Visual polish, edge cases, and finalization
 
-- [ ] T049 [P] Add loading states during video connection with teal pulse animation
-- [ ] T050 [P] Add error states for failed connections with retry option
-- [ ] T051 [P] Add "Session not live" message when cohort has no active session
-- [ ] T052 [P] Add camera/microphone permission handling with view-only fallback
-- [ ] T053 [P] Add responsive design for cohort grid (mobile-friendly layout)
-- [ ] T054 Verify all screens have Header and Footer
-- [ ] T055 [P] Add hover effects and transitions matching futuristic aesthetic
-- [ ] T056 [P] Add connection status indicator in video session
-- [ ] T057 Run through quickstart.md verification steps
-- [ ] T058 Final visual polish pass for teal/black/orange theme consistency
+- [x] T049 [P] Add loading states during video connection with teal pulse animation
+- [x] T050 [P] Add error states for failed connections with retry option
+- [x] T051 [P] Add "Session not live" message when cohort has no active session
+- [x] T052 [P] Add camera/microphone permission handling with view-only fallback
+- [x] T053 [P] Add responsive design for cohort grid (mobile-friendly layout)
+- [x] T054 Verify all screens have Header and Footer
+- [x] T055 [P] Add hover effects and transitions matching futuristic aesthetic
+- [x] T056 [P] Add connection status indicator in video session
+- [x] T057 Run through quickstart.md verification steps
+- [x] T058 Final visual polish pass for teal/black/orange theme consistency
 
 ---
 
