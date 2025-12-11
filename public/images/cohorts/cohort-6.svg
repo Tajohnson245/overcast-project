@@ -1,0 +1,18 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1A1A1A"/>
+      <stop offset="100%" style="stop-color:#0A0A0A"/>
+    </linearGradient>
+    <pattern id="grid6" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#FFBD17" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg6)"/>
+  <rect width="400" height="300" fill="url(#grid6)"/>
+  <polygon points="200,70 260,150 200,130 140,150" fill="none" stroke="#FFBD17" stroke-width="2" opacity="0.6"/>
+  <circle cx="200" cy="110" r="20" fill="#FFBD17" opacity="0.2"/>
+  <text x="200" y="200" text-anchor="middle" fill="#FFBD17" font-family="sans-serif" font-size="24" font-weight="bold">COHORT 6</text>
+  <text x="200" y="230" text-anchor="middle" fill="#888888" font-family="sans-serif" font-size="14">AI Production</text>
+</svg>
+
