@@ -37,24 +37,29 @@ attending a live class.
 
 ### User Story 2 - Instructor Enters Instructor Mode (Priority: P2)
 
-An instructor visits the Overcast application and toggles to "Instructor" mode using
-the header button. Once in Instructor mode, the instructor sees the same 6 cohort
-tiles but will receive enhanced controls when joining a session.
+An instructor visits the Overcast application and clicks the "Instructors" button in
+the header. Since instructor mode requires authentication, they are prompted to enter
+their username and password. After successful login, they enter Instructor mode and
+see the same 6 cohort tiles but will receive enhanced controls when joining a session.
 
 **Why this priority**: Instructors need a separate mode to access moderation tools.
 This is essential for classroom management but depends on the base student flow.
 
-**Independent Test**: Can be tested by toggling to Instructor mode, verifying the UI
-reflects instructor selection, and confirming the mode persists when navigating.
+**Independent Test**: Can be tested by clicking Instructors, completing login, verifying
+the UI reflects instructor selection, and confirming the mode persists when navigating.
 
 **Acceptance Scenarios**:
 
-1. **Given** a user on the main lobby, **When** they click "Instructors" in the header,
-   **Then** the button becomes selected and the user is in Instructor mode
-2. **Given** an instructor on the main lobby, **When** they view the page, **Then** 
-   they see the same 6 cohort tiles as students
-3. **Given** an instructor in Instructor mode, **When** they click "Students" in the
-   header, **Then** they switch back to Student mode
+1. **Given** an unauthenticated user on the main lobby, **When** they click "Instructors"
+   in the header, **Then** they see a login prompt requesting username and password
+2. **Given** a user viewing the login prompt, **When** they enter valid credentials,
+   **Then** the login succeeds and they enter Instructor mode
+3. **Given** a user viewing the login prompt, **When** they enter invalid credentials,
+   **Then** they see an error message and remain in Student mode
+4. **Given** an authenticated instructor on the main lobby, **When** they view the page,
+   **Then** they see the same 6 cohort tiles as students
+5. **Given** an instructor in Instructor mode, **When** they click "Students" in the
+   header, **Then** they switch back to Student mode (logout from instructor session)
 
 ---
 
@@ -83,24 +88,27 @@ Control Panel is visible with mute and breakout room options.
 
 ---
 
-### User Story 4 - Student/Instructor Mode Toggle Persists (Priority: P3)
+### User Story 4 - Instructor Session Persists (Priority: P3)
 
-When a user switches between Student and Instructor mode, their selection persists
-as they navigate between the lobby and sessions. The header always shows the current
-mode selection.
+When an instructor authenticates and enters Instructor mode, their authenticated
+session persists as they navigate between the lobby and cohort sessions. The header
+shows the current mode and the instructor does not need to re-authenticate until
+they explicitly switch back to Student mode (which logs them out).
 
-**Why this priority**: Mode persistence improves user experience but is not blocking
+**Why this priority**: Session persistence improves user experience but is not blocking
 for core functionality.
 
-**Independent Test**: Can be tested by toggling mode, joining a session, returning
-to lobby, and verifying mode is still selected.
+**Independent Test**: Can be tested by logging in as instructor, joining a session,
+returning to lobby, and verifying instructor mode is still active.
 
 **Acceptance Scenarios**:
 
 1. **Given** a student in a session, **When** they return to lobby, **Then** the 
    "Students" button remains selected
-2. **Given** an instructor in a session, **When** they return to lobby, **Then** the
-   "Instructors" button remains selected
+2. **Given** an authenticated instructor in a session, **When** they return to lobby,
+   **Then** the "Instructors" button remains selected and they stay authenticated
+3. **Given** an authenticated instructor, **When** they click "Students" to switch
+   modes, **Then** they are logged out and return to unauthenticated Student mode
 
 ---
 
@@ -143,6 +151,8 @@ to lobby, and verifying mode is still selected.
 - **FR-012**: System MUST require username/password authentication before granting
   access to Instructor mode
 - **FR-013**: Unauthenticated users clicking "Instructors" MUST see a login prompt
+- **FR-020**: Authenticated instructors clicking "Students" MUST be logged out and
+  return to unauthenticated Student mode
 - **FR-014**: Students MUST be able to broadcast their own video and audio when in a session
 - **FR-015**: System MUST prompt students for camera/microphone permissions when joining
 - **FR-016**: Students MUST be able to participate without camera/mic (view-only fallback)
