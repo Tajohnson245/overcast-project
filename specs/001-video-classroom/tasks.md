@@ -36,12 +36,12 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T008 Create TypeScript interfaces in src/types/index.ts (Cohort, User, Session, Participant, LoginRequest, LoginResponse)
-- [ ] T009 [P] Create cohort configuration in src/config/cohorts.ts with 6 static cohorts using env vars
-- [ ] T010 [P] Create global styles in src/app/globals.css with dark theme base
-- [ ] T011 [P] Implement root layout in src/app/layout.tsx with font loading and dark background
-- [ ] T012 Create Header component with "Overcast" branding and placeholder mode toggle in src/components/Header.tsx
-- [ ] T013 [P] Create Footer component with "Powered by the Overclock Accelerator" in src/components/Footer.tsx
+- [x] T008 Create TypeScript interfaces in src/types/index.ts (Cohort, User, Session, Participant, LoginRequest, LoginResponse)
+- [x] T009 [P] Create cohort configuration in src/config/cohorts.ts with 6 static cohorts using env vars
+- [x] T010 [P] Create global styles in src/app/globals.css with dark theme base
+- [x] T011 [P] Implement root layout in src/app/layout.tsx with font loading and dark background
+- [x] T012 Create Header component with "Overcast" branding and placeholder mode toggle in src/components/Header.tsx
+- [x] T013 [P] Create Footer component with "Powered by the Overclock Accelerator" in src/components/Footer.tsx
 
 **Checkpoint**: App shows header/footer shell, types are importable, cohort config returns 6 cohorts
 

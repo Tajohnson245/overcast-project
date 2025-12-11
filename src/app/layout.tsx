@@ -4,12 +4,15 @@
  * This layout wraps all pages and provides:
  * - Custom futuristic fonts (Space Grotesk for display, JetBrains Mono for code)
  * - Dark theme background
+ * - Header and Footer components
  * - Global metadata
  */
 
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // Primary display font - bold geometric sans-serif for futuristic aesthetic
 const spaceGrotesk = Space_Grotesk({
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
 
 /**
  * Root layout component that wraps all pages.
- * Provides font variables and base styling.
+ * Provides font variables, base styling, and persistent Header/Footer.
  */
 export default function RootLayout({
   children,
@@ -58,9 +61,20 @@ export default function RootLayout({
           bg-overcast-black 
           text-overcast-white
           min-h-screen
+          flex
+          flex-col
         `}
       >
-        {children}
+        {/* Header with navigation - mode toggle will be connected in Phase 4 */}
+        <Header />
+        
+        {/* Main content area */}
+        <main className="flex-1">
+          {children}
+        </main>
+        
+        {/* Footer with Overclock branding */}
+        <Footer />
       </body>
     </html>
   );
